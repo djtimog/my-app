@@ -13,10 +13,10 @@ export default function SignIn(){
                 <Image src="/signin-img.svg" alt="signin image" width={400} height={600} className='w-100'/>
             </div>
             <div className="col-xs-12 col-lg-7 p-1 p-sm-2 p-md-3 p-lg-4 p-xl-5">
-                <Link href="/" >
-                    <LogoComponent  className="float-end my-5 me-md-5 me-4"/>
-                </Link>
                 <div className="p-5">
+                    <Link href="/" >
+                        <LogoComponent  className="float-end my-5 me-md-5 me-4"/>
+                    </Link>
                     <div className="text-start mb-5">
                         <p className="h2 my-3 mb-4"><b>Welcome Back</b></p>
                         <p className="h6">Don&apos;t have an account? <Link href={routes.auth.signup} className={styles.link}>Sign up</Link></p>
