@@ -3,8 +3,8 @@ import routes from "@/routes";
 import Image from "next/image";
 import Link from "next/link";
 import LogoComponent from "@/components/LogoComponent";
-import Reset from "@/app/auth/components/password/reset";
 import mediaLink from "@/data/mediaLinks";
+import PasswordModal from '../components/password';
 export default function SignIn(){
     return(
     <>
@@ -51,7 +51,7 @@ export default function SignIn(){
                                         </span>
                                         <input type="password" className={`${styles.input} form-control border-primary text-lg-center`} id="Password" placeholder="*******************" aria-label="Password" required/>
                                     </div>   
-                                    <Reset/>
+                                    <PasswordModal/>
                                     <div className="">
                                         <button type="submit" className={`btn btn-primary ${styles.btn}`}>Sign in</button>
                                     </div>

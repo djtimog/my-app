@@ -2,7 +2,8 @@
 import Image from "next/image";
 import routes from "@/routes";
 import { useEffect } from "react";
-import hero from "@/img/homepage-section11.png";
+import mdHero from "@/img/homepage-section1.png";
+import xsHero from "@/img/homepage-section11.png";
 import styles from "@/app/page.module.scss";
 import Footer from "@/components/Footer/index";
 import Header from "@/components/Header/index";
@@ -24,8 +25,9 @@ export default function Home() {
           </h2>
           <p>Our online education platform is a fully functional learning place consisting of virtual class,e-library,testing/assessment modus and others.It is an interactive medium where students can engage the teachers just from the comfort of their homes.</p>
         </div>
-        <div className={`w-100 ${styles.hero}`}>
-          <Image className="w-100" src={hero} alt="hero" />
+        <div className={`w-100 ${styles.hero} h-100`}>
+          <Image className="w-100 d-none d-md-block" src={mdHero} alt="hero" />
+          <Image className="w-100 d-block d-md-none" src={xsHero} alt="hero"/>
         </div>
       </section>
       <section className="mb-5 w-100 p-7vw d-md-flex flex-column justify-content-center align-items-center" >

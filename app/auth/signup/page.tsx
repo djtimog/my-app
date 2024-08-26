@@ -11,7 +11,7 @@ export default function SignUp(){
     <div className="row">
         <div className="col-xs-12 col-lg-6 p-1 p-sm-2 p-md-3 p-lg-5">
             <Link href="/" >
-                <LogoComponent  className="float-end my-5 me-md-5 me-4"/>
+                <LogoComponent  className="float-end my-5"/>
             </Link>
             <div className="p-5">
                 <div className="text-start mb-5">
