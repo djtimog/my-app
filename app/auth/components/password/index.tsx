@@ -9,30 +9,44 @@ import VerifyModal from './verification';
 export default function PasswordModal() {
 
     const [showReset, setShowReset] = useState(false);
-    const handleCloseReset = () => setShowReset(false);
-    const handleShowReset = () => setShowReset(true);
     const [showVerify, setShowVerify] = useState(false);
-    const handleCloseVerify = () => setShowVerify(false);
-    const handleShowVerify = () => setShowVerify(true);
     const [showChange, setShowChange] = useState(false);
-    const handleCloseChange = () => setShowChange(false);
-    const handleShowChange = () => setShowChange(true);
-
-    const handleShow1 =()=>{
-        handleShowReset();
-        handleCloseVerify();
-        handleCloseChange();
-    }
-    const handleShow2 =()=>{
-        handleCloseReset();
-        handleShowVerify();
-        handleCloseChange();
-    }
-    const handleShow3 =()=>{
-        handleCloseReset();
-        handleCloseVerify();
-        handleShowChange();
-    }
+    const Password = [
+        {
+            Value: ()=> showReset,
+            Close: () => setShowReset(false),
+            Modal: ResetModal,
+            Show: () => {
+                setShowReset(true);
+                setShowVerify(false);
+                setShowChange(false);
+            },
+            // ShowNext:()=>Password.Verify.Show()
+        },
+        {
+            Value: ()=> showVerify,
+            Close: () => setShowVerify(false),
+            Modal: VerifyModal,
+            Show: () => {
+                setShowReset(false);
+                setShowVerify(true);
+                setShowChange(false);
+            },
+            // ShowNext:()=>Password.Change.Show()
+        },
+        {
+            Value: ()=> showChange,
+            Close: () => setShowChange(false),
+            Modal: ChangeModal,
+            Show: () => {
+                setShowReset(false);
+                setShowVerify(false);
+                setShowChange(true);
+            },
+            // ShowNext:()=>Password.Change.Close()
+        }
+    ];
+    
     const [Theme, setTheme] = useState("dark");
 
     useEffect(() => {
@@ -55,32 +69,21 @@ export default function PasswordModal() {
 
     return (
         <>
-            <div className={`${styles.link} mb-3`} onClick={handleShow1}>
+            <div className={`${styles.link} mb-3`} onClick={Password[0].Show()}>
                 Forget password?
             </div>
 
-            <Modal show={showReset} onHide={handleCloseReset} data-bs-theme={Theme} className="text-center">
-                <Modal.Header closeButton>
-                </Modal.Header>
-                <Modal.Body>
-                    <ResetModal onClick={handleShow2}/>
-                </Modal.Body>
-            </Modal>
-            <Modal show={showVerify} onHide={handleCloseVerify} data-bs-theme={Theme} className="text-center">
-                <Modal.Header closeButton>
-                </Modal.Header>
-                <Modal.Body>
-                    <VerifyModal onClick={handleShow3}/>
-                </Modal.Body>
-            </Modal>
-            <Modal show={showChange} onHide={handleCloseChange} data-bs-theme={Theme} className="text-center">
-                <Modal.Header closeButton>
-                </Modal.Header>
-                <Modal.Body>
-                    <ChangeModal />
-                </Modal.Body>
-            </Modal>
-
+            {
+                Password.map((password , index)=>{
+                    <Modal show={password.Value()} onHide={password.Close()} data-bs-theme={Theme} className="text-center" key={index}>
+                        <Modal.Header closeButton>
+                        </Modal.Header>
+                        <Modal.Body>
+                            <password.Modal onClick={Password[index + 1].Show()}/>
+                        </Modal.Body>
+                    </Modal>
+                })
+            }
         </>
     )
 }
