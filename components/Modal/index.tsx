@@ -10,7 +10,6 @@ interface ModalContextType {
     handleShow: () => void;
     setModalHeader: Dispatch<SetStateAction<ReactNode>>;
     setModalBody: Dispatch<SetStateAction<ReactNode>>;
-    className?: string | undefined
 }
 
 const ModalContext = createContext<ModalContextType | undefined>(undefined);
@@ -43,7 +42,7 @@ const AppModal = ({ children }: { children: ReactNode }) => {
     return (
         <ModalContext.Provider value={{ show, handleClose, handleShow, setModalHeader, setModalBody }}>
             {children}
-            <Modal show={show} onHide={handleClose} data-bs-theme={Theme} className={`${styles.content} modal-content`} style={{textAlign: 'center'}}>
+            <Modal show={show} onHide={handleClose} data-bs-theme={Theme} className={`${styles.content} modal-content`}>
                 <Modal.Header closeButton>
                     {modalHeader}
                 </Modal.Header>

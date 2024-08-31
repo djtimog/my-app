@@ -17,44 +17,24 @@ export default function PasswordModal() {
     interface PasswordType {
         Name: string;
         Value: () => boolean;
-        Close: () => void;
         Modal: ModalComponentType;
-        Show: () => void;
         Open?: () => void; // New property that can be a function or undefined
     }
     const Password:PasswordType[] = [
         {
             Name: "Reset Password",
             Value: ()=> showReset,
-            Close: () => setShowReset(false),
             Modal: ResetModal,
-            Show: () => {
-                setShowReset(true);
-                setShowVerify(false);
-                setShowChange(false);
-            },
         },
         {
             Name: "Verification",
             Value: ()=> showVerify,
-            Close: () => setShowVerify(false),
             Modal: VerifyModal,
-            Show: () => {
-                setShowReset(false);
-                setShowVerify(true);
-                setShowChange(false);
-            },
         },
         {
             Name: "Change Password",
             Value: ()=> showChange,
-            Close: () => setShowChange(false),
             Modal: ChangeModal,
-            Show: () => {
-                setShowReset(false);
-                setShowVerify(false);
-                setShowChange(true);
-            },
         }
     ];
     Password.map((password, index) => {
