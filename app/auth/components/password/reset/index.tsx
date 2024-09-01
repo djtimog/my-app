@@ -10,9 +10,8 @@ import * as Yup from 'yup';
 const ResetModal = ({ onClick }:{onClick:() => void}) => {
     const validationSchema = Yup.object().shape({
         email: Yup.string()
-        .required('Email is required')
-        .min(8, 'Email is too small')
-        .matches(/[.@]/, 'Email must contain @'),
+        .email('Invalid Email address')
+        .required('Email address is required'),
       });
     
       const formOptions = { resolver: yupResolver(validationSchema) };
