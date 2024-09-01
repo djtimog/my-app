@@ -42,13 +42,15 @@ const AppModal = ({ children }: { children: ReactNode }) => {
     return (
         <ModalContext.Provider value={{ show, handleClose, handleShow, setModalHeader, setModalBody }}>
             {children}
-            <Modal show={show} onHide={handleClose} data-bs-theme={Theme} className={`${styles.content} modal-content`}>
+            <Modal show={show} onHide={handleClose}>
+                <div>
                 <Modal.Header closeButton>
                     {modalHeader}
                 </Modal.Header>
                 <Modal.Body>
                     {modalBody}
                 </Modal.Body>
+                </div>
             </Modal>
         </ModalContext.Provider>
     );

@@ -120,16 +120,6 @@ a {
 ul {
   margin: 0;
 }
-.modal-content {
-  text-align: center;
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
 input {
   color: black;
 }
@@ -143,4 +133,7 @@ input {
   background: rgba(196, 196, 196, 0.5);
   border-right: none;
   font-size: 20px;
+}
+.modal{
+  text-align: center;
 }
