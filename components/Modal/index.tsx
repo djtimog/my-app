@@ -15,24 +15,6 @@ interface ModalContextType {
 const ModalContext = createContext<ModalContextType | undefined>(undefined);
 
 const AppModal = ({ children }: { children: ReactNode }) => {
-    const [Theme, setTheme] = useState("dark");
-    useEffect(() => {
-        const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-        const updateChange = () => {
-            if (darkModeMediaQuery.matches) {
-                setTheme("dark");
-            } else {
-                setTheme("white");
-            }
-        };
-
-        updateChange(); // Set initial Change based on current preference
-        darkModeMediaQuery.addEventListener('change', updateChange); // Listen for changes
-
-        return () => {
-            darkModeMediaQuery.removeEventListener('change', updateChange); // Cleanup listener on unmount
-        };
-    }, []);
 
     const [show, setShow] = useState(false);
     const [modalHeader, setModalHeader] = useState<ReactNode>(<></>);
