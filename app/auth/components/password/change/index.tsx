@@ -2,7 +2,7 @@
 import ChangeIcon from "@/app/auth/components/ChangeIcon";
 import Image from "next/image";
 import styles from '../password.module.scss';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
@@ -28,13 +28,16 @@ export default function ChangeModal(){
       };
     
     const [checkError , setCheckError] = useState(true);
-    const checkErrorCheck = ()=>{
+    const checkErrorMessage = ()=>{
         if(errors.password?.message == undefined && errors.confirmPassword?.message == undefined){
             setCheckError(false);
         }else{
             setCheckError(true);
         }
     }
+    useEffect(() => {
+        checkErrorMessage();
+    }, [errors.password?.message || errors.confirmPassword?.message]);
     return(
         <>
             <div className="d-flex justify-content-around align-content-center p-2 p-md-3 p-lg-5">
@@ -57,7 +60,7 @@ export default function ChangeModal(){
                                 <span className={`input-group-text inputText d-flex justify-content-center align-items-center border-primary w-25 `} id="basic-addon1">
                                     <Image src="/passwordIcon.svg" width={30} height={30} alt="password Icon"/>
                                 </span>
-                                <input type="password" className={`${styles.input} form-control border-primary`} id="confirmPassword" placeholder="" aria-label="Confirm Password" {...register('confirmPassword')} onFocus={checkErrorCheck} required/>
+                                <input type="password" className={`${styles.input} form-control border-primary`} id="confirmPassword" placeholder="" aria-label="Confirm Password" {...register('confirmPassword')} required/>
                             </div>
                             <div className='text-danger mb-3'>{errors.confirmPassword && <p>{errors.confirmPassword.message}</p>}</div>
                             <div>

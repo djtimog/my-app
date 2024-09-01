@@ -1,8 +1,6 @@
 'use client';
-
 import Modal from 'react-bootstrap/Modal';
-import { createContext, Dispatch, ReactNode, SetStateAction, useContext, useState, useEffect } from 'react';
-import styles from "./modal.module.scss";
+import { createContext, Dispatch, ReactNode, SetStateAction, useContext, useState } from 'react';
 
 interface ModalContextType {
     show: boolean;

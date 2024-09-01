@@ -2,7 +2,7 @@
 import ResetIcon from "@/app/auth/components/ResetIcon";
 import Image from "next/image";
 import styles from '../password.module.scss';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
@@ -29,6 +29,9 @@ const ResetModal = ({ onClick }:{onClick:() => void}) => {
             setCheckError(true);
         }
     }
+    useEffect(() => {
+        checkErrorMessage();
+    }, [errors.email?.message]);
     return (
         <>
             <div className="d-flex justify-content-around align-content-center p-2 p-md-3 p-lg-5">
@@ -43,11 +46,10 @@ const ResetModal = ({ onClick }:{onClick:() => void}) => {
                             <span className={`input-group-text inputText d-flex justify-content-center align-items-center border-primary w-25 `} id="basic-addon1">
                                 <Image src="/emailIcon.svg" width={30} height={30} alt="password Icon" />
                             </span>
-                            <input type="email" className={`${styles.input} form-control border-primary text-lg-center`} id="Email" {...register('email')} placeholder="johnkentacad@gmail.com" aria-label="Email address" onBlur={checkErrorMessage} onFocus={handleSubmit(onSubmit)} required autoFocus />
+                            <input type="email" className={`${styles.input} form-control border-primary text-lg-center`} id="Email" {...register('email')} placeholder="johnkentacad@gmail.com" aria-label="Email address" onFocus={handleSubmit(onSubmit)} autoFocus />
                         </div>
                         <div className='text-danger mb-5'>{errors.email && <p>{errors.email.message}</p>}</div>
                         <div className="">
-                        <div className={`${styles.link} text-secondary`} onFocus={checkErrorMessage} onBlur={checkErrorMessage} >click here to validate code</div>
                             <button disabled={checkError} className={`btn btn-primary ${styles.btn}`} onClick={onClick}>Enter</button>
                         </div>
                     </div>
