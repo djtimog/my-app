@@ -57,7 +57,7 @@ export default function ChangeModal(){
                                 <span className={`input-group-text inputText d-flex justify-content-center align-items-center border-primary w-25 `} id="basic-addon1">
                                     <Image src="/passwordIcon.svg" width={30} height={30} alt="password Icon"/>
                                 </span>
-                                <input type="password" className={`${styles.input} form-control border-primary`} id="confirmPassword" placeholder="" aria-label="Confirm Password"{...register('confirmPassword')} onFocus={checkErrorCheck} required/>
+                                <input type="password" className={`${styles.input} form-control border-primary`} id="confirmPassword" placeholder="" aria-label="Confirm Password" {...register('confirmPassword')} onFocus={checkErrorCheck} required/>
                             </div>
                             <div className='text-danger mb-3'>{errors.confirmPassword && <p>{errors.confirmPassword.message}</p>}</div>
                             <div>
