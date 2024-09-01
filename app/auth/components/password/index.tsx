@@ -7,33 +7,25 @@ import VerifyModal from './verification';
 import  { useModal } from "@/components/Modal";
 
 export default function PasswordModal() {
-
-    const [showReset, setShowReset] = useState(false);
-    const [showVerify, setShowVerify] = useState(false);
-    const [showChange, setShowChange] = useState(false);
-
+    const { handleShow, setModalHeader, setModalBody } = useModal();
     type ModalComponentType = ({ onClick }: { onClick: () => void }) => JSX.Element;
 
     interface PasswordType {
         Name: string;
-        Value: () => boolean;
         Modal: ModalComponentType;
         Open?: () => void; // New property that can be a function or undefined
     }
     const Password:PasswordType[] = [
         {
             Name: "Reset Password",
-            Value: ()=> showReset,
             Modal: ResetModal,
         },
         {
             Name: "Verification",
-            Value: ()=> showVerify,
             Modal: VerifyModal,
         },
         {
             Name: "Change Password",
-            Value: ()=> showChange,
             Modal: ChangeModal,
         }
     ];
@@ -45,9 +37,6 @@ export default function PasswordModal() {
             handleShow();
         };
     })
-    
-    const { handleShow, setModalHeader, setModalBody } = useModal();
-    
     return (
         <div className={`${styles.link} mb-3`} onClick={Password[0]?.Open}>
             Forget password?
