@@ -1,6 +1,5 @@
 "use client";
 import styles from './password.module.scss';
-import { useState, useEffect } from 'react';
 import ResetModal from './reset';
 import ChangeModal from './change';
 import VerifyModal from './verification';
@@ -33,7 +32,11 @@ export default function PasswordModal() {
         password.Open = () => {
             const nextShow = Password[index + 1]?.Open || (() => {});
             setModalBody(<password.Modal onClick={nextShow} />);
-            setModalHeader(<h3>{password.Name}</h3>);
+            setModalHeader(
+                <div className='text-center'>
+                    <h3>{password.Name}</h3>
+                </div>
+            );
             handleShow();
         };
     })
