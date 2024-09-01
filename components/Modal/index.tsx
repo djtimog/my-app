@@ -43,14 +43,12 @@ const AppModal = ({ children }: { children: ReactNode }) => {
         <ModalContext.Provider value={{ show, handleClose, handleShow, setModalHeader, setModalBody }}>
             {children}
             <Modal show={show} onHide={handleClose}>
-                <div>
                 <Modal.Header closeButton>
                     {modalHeader}
                 </Modal.Header>
                 <Modal.Body>
                     {modalBody}
                 </Modal.Body>
-                </div>
             </Modal>
         </ModalContext.Provider>
     );
