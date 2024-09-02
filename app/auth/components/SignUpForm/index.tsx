@@ -2,7 +2,7 @@
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
-import CountrySelect from "../CountrySelect";
+import CountrySelect from "@/app/auth/components/CountrySelect";
 import mediaLink from "@/data/mediaLinks";
 import Image from "next/image";
 import Link from "next/link";

@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import styles from '@/app/auth/signup/signup.module.scss';
 
 const countries = [
