@@ -10,6 +10,7 @@ import Header from "@/components/Header/index";
 import 'swiper/scss';
 import 'swiper/scss/pagination';
 import SwiperContainer from "@/components/SwiperContainer";
+import Section4 from "@/components/Section4";
 
 
 export default function Home() {
@@ -37,6 +38,7 @@ export default function Home() {
           <SwiperContainer/>
         </div>
       </section>
+      <Section4 />
     </main>
     <Footer />
   </>
