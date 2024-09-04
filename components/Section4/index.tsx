@@ -7,7 +7,7 @@ import firstAvatar from "@/img/avatar/img1.png";
 export default function Section4(){
     return(
         <>
-            <section className={`${styles.Section4} w-100 p-4 p-sm-5`}>
+            <section className={` w-100 p-4 p-sm-5`}>
                 <div className="m-1 m-sm-2 m-md-5 my-3">
                     <div className="text-center m-1 m-sm-2 m-md-5 p-1 p-sm-2 p-md-5">
                         <h3 className="mb-4"><b>Doubting? Hear from others</b></h3>

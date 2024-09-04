@@ -38,7 +38,9 @@ export default function Home() {
           <SwiperContainer/>
         </div>
       </section>
-      <Section4 />
+      <div className={`${styles.Section4} w-100 p-4 p-sm-5`}>
+        <Section4 />
+      </div> 
     </main>
     <Footer />
   </>
