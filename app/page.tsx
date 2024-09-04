@@ -11,6 +11,7 @@ import 'swiper/scss';
 import 'swiper/scss/pagination';
 import SwiperContainer from "@/components/SwiperContainer";
 import Section4 from "@/components/Section4";
+import Section5 from "@/components/Section5";
 
 
 export default function Home() {
@@ -41,6 +42,9 @@ export default function Home() {
       <div className={`${styles.Section4} w-100 p-4 p-sm-5`}>
         <Section4 />
       </div> 
+      <div className={`${styles.Section5} w-100 p-4 p-sm-5 text-center`}>
+        <Section5 />
+      </div>
     </main>
     <Footer />
   </>
