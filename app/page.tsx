@@ -48,12 +48,12 @@ export default function Home() {
       <div className={`${styles.Section5} w-100 p-4 p-sm-5 text-center`}>
         <Section5 />
       </div>
-      <div className="d-md-flex w-100 p-4 py-5 p-sm-5 text-center justify-content-around">
+      <div className="d-md-flex w-100 p-4 py-5 p-sm-5 text-center justify-content-around align-content-center">
         <div>
           <p className="h3"><b>Ready to start a journey with us?</b></p>
         </div>
         <div>
-          <Link href={routes.auth.signup} className="btn bg-secondary p-3 shadow">
+          <Link href={routes.auth.signup} className="btn bg-secondary p-2 shadow">
             Apply Online <FontAwesomeIcon className="ms-2" icon={faArrowRight} />
           </Link>
         </div>
