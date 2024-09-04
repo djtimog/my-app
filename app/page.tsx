@@ -1,6 +1,7 @@
 'use client';
 import Image from "next/image";
 import routes from "@/routes";
+import Link from "next/link";
 import { useEffect } from "react";
 import mdHero from "@/img/homepage-section1.png";
 import xsHero from "@/img/homepage-section11.png";
@@ -12,6 +13,8 @@ import 'swiper/scss/pagination';
 import SwiperContainer from "@/components/SwiperContainer";
 import Section4 from "@/components/Section4";
 import Section5 from "@/components/Section5";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 
 export default function Home() {
@@ -44,6 +47,16 @@ export default function Home() {
       </div> 
       <div className={`${styles.Section5} w-100 p-4 p-sm-5 text-center`}>
         <Section5 />
+      </div>
+      <div className="d-md-flex w-100 p-4 py-5 p-sm-5 text-center justify-content-around">
+        <div>
+          <p className="h3"><b>Ready to start a journey with us?</b></p>
+        </div>
+        <div>
+          <Link href={routes.auth.signup} className="btn bg-secondary p-3 shadow">
+            Apply Online <FontAwesomeIcon className="ms-2" icon={faArrowRight} />
+          </Link>
+        </div>
       </div>
     </main>
     <Footer />
