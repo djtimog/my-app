@@ -26,7 +26,7 @@ export default function Section4(){
                     </div>
                     <div>
                         <Image src={secondAvatar} alt={`avatar`} title={"I can help marketing strategy"} className="d-block d-lg-none" width={70} height={70}/>
-                        <Image src={lgSecondAvatar} alt={`avatar`} className="bigsecond d-none d-lg-block" width={300} height={110}/>
+                        <Image src={lgSecondAvatar} alt={`avatar`} className={`${styles.bigsecond} d-none d-lg-block`} width={300} height={110}/>
                     </div>
                 </div>
                 <div>
