@@ -18,15 +18,15 @@ import lgFifthAvatar from "@/img/avatar/lg-avatar/img5.png";
 export default function Section4(){
     return(
         <>
-            <section className={` w-100 p-4 p-sm-5 py-5`}>
-                <div className={`${styles.topAvatar} w-100 d-flex justify-content-between px-lg-5`}>
-                    <div>
+            <section className={`p-4 p-sm-5 py-5`}>
+                <div className={`${styles.topAvatar} d-flex justify-content-between px-lg-5`}>
+                    <div className={`${styles.firstAvatar}`}>
                         <Image src={firstAvatar} alt={`avatar`} title={"I can take care of your pitch"} className="d-block d-lg-none" width={70} height={70}/>
-                        <Image src={lgFirstAvatar} alt={`avatar`} className="bigfirst d-none d-lg-block" width={300} height={110}/>
+                        <Image src={lgFirstAvatar} alt={`avatar`} className={`${styles.lgfirst} d-none d-lg-block`} width={300} height={110}/>
                     </div>
-                    <div>
+                    <div className={`${styles.secondAvatar}`}>
                         <Image src={secondAvatar} alt={`avatar`} title={"I can help marketing strategy"} className="d-block d-lg-none" width={70} height={70}/>
-                        <Image src={lgSecondAvatar} alt={`avatar`} className={`${styles.bigsecond} d-none d-lg-block`} width={300} height={110}/>
+                        <Image src={lgSecondAvatar} alt={`avatar`} className={`${styles.lgsecond} d-none d-lg-block`} width={300} height={110}/>
                     </div>
                 </div>
                 <div>
@@ -36,18 +36,18 @@ export default function Section4(){
                         <Link href={routes.auth.signup} className="btn btn-primary px-5 py-3"> Register Now</Link>
                     </div>
                 </div>
-                <div className={`${styles.bottomAvatar} w-100 d-flex justify-content-between`}>
-                    <div>
+                <div className={`${styles.bottomAvatar} d-flex justify-content-between`}>
+                    <div className={`${styles.thirdAvatar}`}>
                         <Image src={thirdAvatar} alt={`avatar`} title={"I can design you website"} className="d-block d-lg-none" width={70} height={70}/>
-                        <Image src={lgThirdAvatar} alt={`avatar`} className="bigthird d-none d-lg-block" width={300} height={110}/>
+                        <Image src={lgThirdAvatar} alt={`avatar`} className={`${styles.lgthird} d-none d-lg-block`} width={300} height={110}/>
                     </div>
-                    <div>
+                    <div className={`${styles.fourthAvatar}`}>
                         <Image src={fourthAvatar} alt={`avatar`} title={"I will define the profile of your users"} className="d-block d-lg-none" width={70} height={70}/>
-                        <Image src={lgFourthAvatar} alt={`avatar`} className="bigfourth d-none d-lg-block" width={300} height={110}/>
+                        <Image src={lgFourthAvatar} alt={`avatar`} className={`${styles.lgfourth} d-none d-lg-block`} width={300} height={110}/>
                     </div>
-                    <div>
+                    <div className={`${styles.fifthAvatar}`}>
                         <Image src={fifthAvatar} alt={`avatar`} title={"I can prototype your app"} className="d-block d-lg-none" width={70} height={70}/>
-                        <Image src={lgFifthAvatar} alt={`avatar`} className="bigfifth d-none d-lg-block" width={300} height={110}/>
+                        <Image src={lgFifthAvatar} alt={`avatar`} className={`${styles.lgfifth} d-none d-lg-block`} width={300} height={110}/>
                     </div>
                 </div>
             </section>

@@ -1,9 +1,60 @@
-.topAvatar{
-    .bigfirst{
-        position: relative;
-        top: 100px;
+.lgfirst,.lgsecond,.lgthird,.lgfourth,.lgfifth{
+    position: relative;
+}
+@media(min-width: 992px){
+    .lgfirst{
+        top: 20%;
+    }
+    .lgsecond{
+        left: 10%;
+    }
+    .lgthird{
+        bottom: 10%;
+    }
+    .lgfourth{
+        left: 10%;
+    }
+    .lgfifth{
+        bottom: 30%;
+        left: 5%;
     }
 }
-// .bottomAvatar{
-
-// }
+@media (min-width: 1440px) {
+    .lgfirst{
+        top: 30%;
+        left: 10%;
+    }
+    .lgsecond{
+        right: 10%;
+    }
+    .lgthird{
+        bottom: 20%;
+        left: 10%;
+    }
+    .lgfourth{
+        left: 10%;
+    }
+    .lgfifth{
+        bottom: 10%;
+    }
+}
+@media (min-width: 1200px) {
+    .lgfirst{
+        top: 40%;
+        left: 20%;
+    }
+    .lgsecond{
+        right: 20%;
+    }
+    .lgthird{
+        bottom: 30%;
+        left: 30%;
+    }
+    .lgfourth{
+        left: 20%;
+        top: 10%;
+    }
+    .lgfifth{
+        bottom: 20%;
+    }
+}
