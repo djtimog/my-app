@@ -25,36 +25,39 @@
         left: 10%;
     }
     .lgsecond{
-        right: 10%;
-    }
-    .lgthird{
-        bottom: 20%;
-        left: 10%;
-    }
-    .lgfourth{
-        left: 10%;
-    }
-    .lgfifth{
-        bottom: 10%;
-    }
-}
-@media (min-width: 1200px) {
-    .lgfirst{
-        top: 40%;
-        left: 20%;
-    }
-    .lgsecond{
         right: 20%;
     }
     .lgthird{
-        bottom: 30%;
-        left: 30%;
+        bottom: 20%;
+        left: 10%;
     }
     .lgfourth{
         left: 20%;
-        top: 10%;
     }
     .lgfifth{
-        bottom: 20%;
+        bottom: 40%;
+        right: 15%;
+    }
+}
+@media (min-width: 2048px) {
+    .lgfirst{
+        top: 50%;
+        left: 30%;
+    }
+    .lgsecond{
+        right: 30%;
+        top: 10%;
+    }
+    .lgthird{
+        bottom: 40%;
+        left: 40%;
+    }
+    .lgfourth{
+        left: 30%;
+        top: 20%;
+    }
+    .lgfifth{
+        bottom: 30%;
+        right: 20%;
     }
 }

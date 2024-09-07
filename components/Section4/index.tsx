@@ -20,11 +20,11 @@ export default function Section4(){
         <>
             <section className={`p-4 p-sm-5 py-5`}>
                 <div className={`${styles.topAvatar} d-flex justify-content-between px-lg-5`}>
-                    <div className={`${styles.firstAvatar}`}>
+                    <div>
                         <Image src={firstAvatar} alt={`avatar`} title={"I can take care of your pitch"} className="d-block d-lg-none" width={70} height={70}/>
                         <Image src={lgFirstAvatar} alt={`avatar`} className={`${styles.lgfirst} d-none d-lg-block`} width={300} height={110}/>
                     </div>
-                    <div className={`${styles.secondAvatar}`}>
+                    <div>
                         <Image src={secondAvatar} alt={`avatar`} title={"I can help marketing strategy"} className="d-block d-lg-none" width={70} height={70}/>
                         <Image src={lgSecondAvatar} alt={`avatar`} className={`${styles.lgsecond} d-none d-lg-block`} width={300} height={110}/>
                     </div>
@@ -37,15 +37,15 @@ export default function Section4(){
                     </div>
                 </div>
                 <div className={`${styles.bottomAvatar} d-flex justify-content-between`}>
-                    <div className={`${styles.thirdAvatar}`}>
+                    <div>
                         <Image src={thirdAvatar} alt={`avatar`} title={"I can design you website"} className="d-block d-lg-none" width={70} height={70}/>
                         <Image src={lgThirdAvatar} alt={`avatar`} className={`${styles.lgthird} d-none d-lg-block`} width={300} height={110}/>
                     </div>
-                    <div className={`${styles.fourthAvatar}`}>
+                    <div>
                         <Image src={fourthAvatar} alt={`avatar`} title={"I will define the profile of your users"} className="d-block d-lg-none" width={70} height={70}/>
                         <Image src={lgFourthAvatar} alt={`avatar`} className={`${styles.lgfourth} d-none d-lg-block`} width={300} height={110}/>
                     </div>
-                    <div className={`${styles.fifthAvatar}`}>
+                    <div>
                         <Image src={fifthAvatar} alt={`avatar`} title={"I can prototype your app"} className="d-block d-lg-none" width={70} height={70}/>
                         <Image src={lgFifthAvatar} alt={`avatar`} className={`${styles.lgfifth} d-none d-lg-block`} width={300} height={110}/>
                     </div>
