@@ -2,32 +2,29 @@ import styles from "./Section4.module.scss";
 import routes from "@/routes";
 import Link from "next/link";
 import Image from "next/image";
-import firstAvatar from "@/img/avatar/img1.png";
-import lgFirstAvatar from "@/img/avatar/lg-avatar/img1.png";
-import secondAvatar from "@/img/avatar/img2.png";
-import lgSecondAvatar from "@/img/avatar/lg-avatar/img2.png";
-import thirdAvatar from "@/img/avatar/img3.png";
-import lgThirdAvatar from "@/img/avatar/lg-avatar/img3.png";
-import fourthAvatar from "@/img/avatar/img4.png";
-import lgFourthAvatar from "@/img/avatar/lg-avatar/img4.png";
-import fifthAvatar from "@/img/avatar/img5.png";
-import lgFifthAvatar from "@/img/avatar/lg-avatar/img5.png";
 
- 
+const topAvatars = [
+    {src: "/img/avatar/img1.png", alt: "avatar", title: "I can take care of your pitch", width: 70, height: 70, largeSrc: "/img/avatar/lg-avatar/img1.png", largeWidth: 300, largeHeight: 110, largeClass: styles.lgFirst},
+    {src: "/img/avatar/img2.png", alt: "avatar", title: "I can help marketing strategy", width: 70, height: 70, largeSrc: "/img/avatar/lg-avatar/img2.png", largeWidth: 300, largeHeight: 110, largeClass: styles.lgSecond},
+];
 
-export default function Section4(){
-    return(
+const bottomAvatars = [
+    {src: "/img/avatar/img3.png", alt: "avatar", title: "I can design you website", width: 70, height: 70, largeSrc: "/img/avatar/lg-avatar/img3.png", largeWidth: 300, largeHeight: 110, largeClass: styles.lgThird},
+    {src: "/img/avatar/img4.png", alt: "avatar", title: "I will define the profile of your users", width: 70, height: 70, largeSrc: "/img/avatar/lg-avatar/img4.png", largeWidth: 300, largeHeight: 110, largeClass: styles.lgFourth},
+    {src: "/img/avatar/img5.png", alt: "avatar", title: "I can prototype your app", width: 70, height: 70, largeSrc: "/img/avatar/lg-avatar/img5.png", largeWidth: 300, largeHeight: 110, largeClass: styles.lgFifth},
+];
+
+export default function Section4() {
+    return (
         <>
             <section className={`p-4 p-sm-5 py-5`}>
                 <div className={`${styles.topAvatar} d-flex justify-content-between px-lg-5`}>
-                    <div>
-                        <Image src={firstAvatar} alt={`avatar`} title={"I can take care of your pitch"} className="d-block d-lg-none" width={70} height={70}/>
-                        <Image src={lgFirstAvatar} alt={`avatar`} className={`${styles.lgfirst} d-none d-lg-block`} width={300} height={110}/>
-                    </div>
-                    <div>
-                        <Image src={secondAvatar} alt={`avatar`} title={"I can help marketing strategy"} className="d-block d-lg-none" width={70} height={70}/>
-                        <Image src={lgSecondAvatar} alt={`avatar`} className={`${styles.lgsecond} d-none d-lg-block`} width={300} height={110}/>
-                    </div>
+                    {topAvatars.map(avatar => (
+                        <div key={avatar.src}>
+                            <Image src={avatar.src} alt={avatar.alt} title={avatar.title} className="d-block d-lg-none" width={avatar.width} height={avatar.height}/>
+                            <Image src={avatar.largeSrc} alt={avatar.alt} title={avatar.title} className={`${avatar.largeClass} d-none d-lg-block`} width={avatar.largeWidth} height={avatar.largeHeight}/>
+                        </div>
+                    ))}
                 </div>
                 <div>
                     <div className="text-center m-1 m-sm-2 m-md-5 p-1 p-sm-2 p-md-5">
@@ -37,20 +34,14 @@ export default function Section4(){
                     </div>
                 </div>
                 <div className={`${styles.bottomAvatar} d-flex justify-content-between`}>
-                    <div>
-                        <Image src={thirdAvatar} alt={`avatar`} title={"I can design you website"} className="d-block d-lg-none" width={70} height={70}/>
-                        <Image src={lgThirdAvatar} alt={`avatar`} className={`${styles.lgthird} d-none d-lg-block`} width={300} height={110}/>
-                    </div>
-                    <div>
-                        <Image src={fourthAvatar} alt={`avatar`} title={"I will define the profile of your users"} className="d-block d-lg-none" width={70} height={70}/>
-                        <Image src={lgFourthAvatar} alt={`avatar`} className={`${styles.lgfourth} d-none d-lg-block`} width={300} height={110}/>
-                    </div>
-                    <div>
-                        <Image src={fifthAvatar} alt={`avatar`} title={"I can prototype your app"} className="d-block d-lg-none" width={70} height={70}/>
-                        <Image src={lgFifthAvatar} alt={`avatar`} className={`${styles.lgfifth} d-none d-lg-block`} width={300} height={110}/>
-                    </div>
+                    {bottomAvatars.map(avatar => (
+                        <div key={avatar.src}>
+                            <Image src={avatar.src} alt={avatar.alt} title={avatar.title} className="d-block d-lg-none" width={avatar.width} height={avatar.height}/>
+                            <Image src={avatar.largeSrc} alt={avatar.alt} title={avatar.title} className={`${avatar.largeClass} d-none d-lg-block`} width={avatar.largeWidth} height={avatar.largeHeight}/>
+                        </div>
+                    ))}
                 </div>
             </section>
         </>
-    )
+    );
 }
