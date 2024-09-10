@@ -31,8 +31,8 @@ export default function Home() {
           <p>Our online education platform is a fully functional learning place consisting of virtual class,e-library,testing/assessment modus and others.It is an interactive medium where students can engage the teachers just from the comfort of their homes.</p>
         </div>
         <div className={`w-100 ${styles.hero} h-100`}>
-          <Image className="w-100 d-none d-md-block" src={mdHero} alt="hero" />
-          <Image className="w-100 d-block d-md-none" src={xsHero} alt="hero"/>
+          <Image className="w-100 d-none d-md-block img-fluid" src={mdHero} alt="hero" />
+          <Image className="w-100 d-block d-md-none img-fluid" src={xsHero} alt="hero"/>
         </div>
       </section>
       <section className="mb-5 w-100 p-7vw d-md-flex flex-column justify-content-center align-items-center" >
