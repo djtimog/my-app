@@ -4,7 +4,7 @@ import packages from "@/data/packages";
 import { Autoplay, Pagination } from "swiper/modules";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import styles from "@/components/SwiperContainer/swiper.module.scss";
+import styles from "./swiper.module.scss";
 import Image from "next/image";
 
 
