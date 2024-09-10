@@ -1,63 +1,78 @@
-.lgfirst,.lgsecond,.lgthird,.lgfourth,.lgfifth{
-    position: relative;
-}
 @media(min-width: 992px){
-    .lgfirst{
+    .first,.second,.third,.fourth,.fifth{
+        position: relative;
+    }
+    .first{
         top: 20%;
     }
-    .lgsecond{
+    .second{
         left: 10%;
     }
-    .lgthird{
+    .third{
         bottom: 10%;
     }
-    .lgfourth{
+    .fourth{
         left: 10%;
     }
-    .lgfifth{
+    .fifth{
         bottom: 30%;
         left: 5%;
     }
 }
 @media (min-width: 1440px) {
-    .lgfirst{
+    .first{
         top: 30%;
         left: 10%;
     }
-    .lgsecond{
+    .second{
         right: 20%;
     }
-    .lgthird{
+    .third{
         bottom: 20%;
         left: 10%;
     }
-    .lgfourth{
+    .fourth{
         left: 20%;
     }
-    .lgfifth{
+    .fifth{
         bottom: 40%;
         right: 15%;
     }
 }
 @media (min-width: 2048px) {
-    .lgfirst{
+    .first{
         top: 50%;
         left: 30%;
     }
-    .lgsecond{
+    .second{
         right: 30%;
         top: 10%;
     }
-    .lgthird{
+    .third{
         bottom: 40%;
         left: 40%;
     }
-    .lgfourth{
+    .fourth{
         left: 30%;
         top: 20%;
     }
-    .lgfifth{
+    .fifth{
         bottom: 30%;
         right: 20%;
+    }
+}
+    .first, .second, .third, .fourth, .fifth {
+        animation: fadeIn 1s ease-in-out;
+    }
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
     }
 }
