@@ -10,7 +10,11 @@ const ResetModal = ({ onClick }:{onClick:() => void}) => {
     const validationSchema = Yup.object().shape({
         email: Yup.string()
         .email('Invalid Email address')
-        .required('Email address is required'),
+        .required('Email address is required')
+        .matches(
+          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+          'Email address is invalid'
+        ),
       });
     
       const formOptions = { resolver: yupResolver(validationSchema) };
