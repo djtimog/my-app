@@ -10,9 +10,9 @@ import Footer from "@/components/Footer/index";
 import Header from "@/components/Header/index";
 import 'swiper/scss';
 import 'swiper/scss/pagination';
-import SwiperContainer from "@/components/SwiperContainer";
-import Section4 from "@/components/Section4";
-import Section5 from "@/components/Section5";
+import SwiperContainer from "@/app/components/SwiperContainer";
+import Section4 from "@/app/components/Section4";
+import Section5 from "@/app/components/Section5";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
