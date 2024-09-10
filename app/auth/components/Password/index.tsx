@@ -12,9 +12,9 @@ export default function PasswordModal() {
     interface PasswordType {
         Name: string;
         Modal: ModalComponentType;
-        Open?: () => void; // New property that can be a function or undefined
+        Open?: () => void;
     }
-    const Password:PasswordType[] = [
+    const passwordModalFlows:PasswordType[] = [
         {
             Name: "Reset Password",
             Modal: ResetModal,
@@ -28,9 +28,9 @@ export default function PasswordModal() {
             Modal: ChangeModal,
         }
     ];
-    Password.map((password, index) => {
+    passwordModalFlows.map((password, index) => {
         password.Open = () => {
-            const nextShow = Password[index + 1]?.Open || (() => {});
+            const nextShow = passwordModalFlows[index + 1]?.Open || (() => {});
             setModalBody(<password.Modal onClick={nextShow} />);
             setModalHeader(
                 <div className='text-center'>
@@ -41,7 +41,7 @@ export default function PasswordModal() {
         };
     })
     return (
-        <div className={`${styles.link} mb-3`} onClick={Password[0]?.Open}>
+        <div className={`${styles.link} mb-3`} onClick={passwordModalFlows[0]?.Open}>
             Forget password?
         </div>
     )
