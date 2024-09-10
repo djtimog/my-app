@@ -43,7 +43,7 @@ export default function Section4() {
                         <Link href={routes.auth.signup} className="btn btn-primary px-5 py-3"> Register Now</Link>
                     </div>
                 </div>
-                <div className={`${styles.bottomAvatar} d-flex justify-content-center justify-content-md-between px-lg-5`}>
+                <div className={`${styles.bottomAvatar} d-flex justify-content-center justify-content-md-between`}>
                     {bottomAvatars.map(avatar => (
                         <div key={avatar.title}>
                             <Image src={avatar.src} alt={avatar.alt} title={avatar.title} className={`${avatar.className} img-fluid d-lg-block`}/>
