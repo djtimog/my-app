@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import LogoComponent from "@/components/LogoComponent";
 import mediaLink from "@/data/mediaLinks";
-import PasswordModal from '../components/password';
+import PasswordModal from '@/app/auth/components/Password';
 export default function SignIn(){
     return(
     <>

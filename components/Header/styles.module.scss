@@ -1,7 +1,11 @@
 @use '@/styles' as *;
 .header {
+    z-index: 2;
     width: 100%;
     padding: 2vh 7vw;
+    margin-top: 5px;
+    background: inherit;
+    border-radius: 5px;
 }
 .hamburger {
     font-size: 18px;

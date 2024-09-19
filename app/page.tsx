@@ -1,6 +1,7 @@
 'use client';
 import Image from "next/image";
 import routes from "@/routes";
+import Link from "next/link";
 import { useEffect } from "react";
 import mdHero from "@/img/homepage-section1.png";
 import xsHero from "@/img/homepage-section11.png";
@@ -9,7 +10,11 @@ import Footer from "@/components/Footer/index";
 import Header from "@/components/Header/index";
 import 'swiper/scss';
 import 'swiper/scss/pagination';
-import SwiperContainer from "@/components/SwiperContainer";
+import SwiperContainer from "@/app/components/SwiperContainer";
+import Section4 from "@/app/components/Section4";
+import Section5 from "@/app/components/Section5";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 
 export default function Home() {
@@ -26,8 +31,8 @@ export default function Home() {
           <p>Our online education platform is a fully functional learning place consisting of virtual class,e-library,testing/assessment modus and others.It is an interactive medium where students can engage the teachers just from the comfort of their homes.</p>
         </div>
         <div className={`w-100 ${styles.hero} h-100`}>
-          <Image className="w-100 d-none d-md-block" src={mdHero} alt="hero" />
-          <Image className="w-100 d-block d-md-none" src={xsHero} alt="hero"/>
+          <Image className="w-100 d-none d-md-block img-fluid" src={mdHero} alt="hero" />
+          <Image className="w-100 d-block d-md-none img-fluid" src={xsHero} alt="hero"/>
         </div>
       </section>
       <section className="mb-5 w-100 p-7vw d-md-flex flex-column justify-content-center align-items-center" >
@@ -37,6 +42,22 @@ export default function Home() {
           <SwiperContainer/>
         </div>
       </section>
+      <div className={`${styles.Section4} w-100 p-4 p-sm-5`}>
+        <Section4 />
+      </div> 
+      <div className={`${styles.Section5} w-100 p-4 p-sm-5 text-center`}>
+        <Section5 />
+      </div>
+      <div className="d-md-flex w-100 p-4 py-5 p-sm-5 text-center justify-content-around align-content-center">
+        <div>
+          <p className="h3"><b>Ready to start a journey with us?</b></p>
+        </div>
+        <div>
+          <Link href={routes.auth.signup} className="btn bg-secondary p-2 shadow">
+            Apply Online <FontAwesomeIcon className="ms-2" icon={faArrowRight} />
+          </Link>
+        </div>
+      </div>
     </main>
     <Footer />
   </>
