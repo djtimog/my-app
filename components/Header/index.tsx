@@ -24,8 +24,8 @@ export default function Header() {
                         <FontAwesomeIcon className={`${styles.hamburger}`} onClick={toggle} icon={open ? faTimes : faBars} />
                     </div>
                     <ul className={`${open ? '' : 'd-none '} d-md-flex align-items-center list-unstyled gap-20`}>
-                        <li className='p-2 p-md-0 text-center'><Link href={routes.support.contact}>Packages</Link></li>
-                        <li className='p-2 p-md-0 text-center'><Link href={routes.support.about}>Testimonial</Link></li>
+                        {/*<li className='p-2 p-md-0 text-center'><Link href={routes.support.contact}>Packages</Link></li>
+                        <li className='p-2 p-md-0 text-center'><Link href={routes.support.about}>Testimonial</Link></li>*/}
                         <li className='p-2 p-md-0 text-center'><Link href={routes.auth.signin}>Offers</Link></li>
                         <li className='p-2 p-md-0 text-center'><Link className="btn btn-secondary" href={routes.auth.signup}>Sign Up</Link></li>
                         <li className='p-2 p-md-0 text-center'><Link className="btn bg-transparent border-secondary" href={routes.auth.signin}>Login</Link></li>
